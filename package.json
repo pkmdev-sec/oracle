@@ -1,0 +1,38 @@
+{
+  "name": "@pkmdev-sec/oracle",
+  "version": "1.0.0",
+  "description": "ORACLE — Predictive Context Pre-loader for Claude Code",
+  "type": "module",
+  "main": "lib/index.mjs",
+  "exports": "./lib/index.mjs",
+  "files": [
+    "lib",
+    "hooks/oracle-preload.py",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.mjs && python3 tests/test_oracle_hook.py",
+    "start": "node lib/index.mjs"
+  },
+  "keywords": [
+    "oracle",
+    "predictive",
+    "context",
+    "preloader",
+    "claude-code"
+  ],
+  "author": "pkmdev-sec",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkmdev-sec/oracle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pkmdev-sec/oracle/issues"
+  },
+  "homepage": "https://github.com/pkmdev-sec/oracle#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

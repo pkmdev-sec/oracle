@@ -1,0 +1,162 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#000000"/>
+
+  <!-- Define arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#e5e7eb" text-anchor="middle">
+    ORACLE Architecture Pipeline
+  </text>
+
+  <!-- Node: Prompt -->
+  <g id="prompt">
+    <rect x="50" y="200" width="150" height="80" rx="10" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="125" y="240" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e5e7eb" text-anchor="middle">
+      Prompt
+    </text>
+    <text x="125" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle">
+      User Input
+    </text>
+  </g>
+
+  <!-- Node: File Predictor -->
+  <g id="file-predictor">
+    <rect x="280" y="200" width="180" height="80" rx="10" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="370" y="235" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e5e7eb" text-anchor="middle">
+      File Predictor
+    </text>
+    <text x="370" y="255" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+      Keywords, Paths
+    </text>
+    <text x="370" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+      Co-occurrence
+    </text>
+  </g>
+
+  <!-- Node: Context Ranker -->
+  <g id="context-ranker">
+    <rect x="540" y="200" width="180" height="80" rx="10" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="630" y="235" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e5e7eb" text-anchor="middle">
+      Context Ranker
+    </text>
+    <text x="630" y="255" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+      Multi-signal Scoring
+    </text>
+    <text x="630" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+      Recency, Frequency
+    </text>
+  </g>
+
+  <!-- Node: Preloader -->
+  <g id="preloader">
+    <rect x="800" y="200" width="150" height="80" rx="10" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="875" y="235" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e5e7eb" text-anchor="middle">
+      Preloader
+    </text>
+    <text x="875" y="255" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+      LRU Cache
+    </text>
+    <text x="875" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+      Pre-fetch Files
+    </text>
+  </g>
+
+  <!-- Node: Context Injection -->
+  <g id="context-injection">
+    <rect x="1020" y="200" width="150" height="80" rx="10" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="1095" y="230" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e5e7eb" text-anchor="middle">
+      Context
+    </text>
+    <text x="1095" y="250" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e5e7eb" text-anchor="middle">
+      Injection
+    </text>
+    <text x="1095" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+      Ready to Use
+    </text>
+  </g>
+
+  <!-- Node: Pattern Learner -->
+  <g id="pattern-learner">
+    <rect x="280" y="450" width="180" height="100" rx="10" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="370" y="490" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e5e7eb" text-anchor="middle">
+      Pattern Learner
+    </text>
+    <text x="370" y="510" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+      Learns Over Time
+    </text>
+    <text x="370" y="525" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+      Keyword→File Maps
+    </text>
+    <text x="370" y="540" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+      Co-occurrence Patterns
+    </text>
+  </g>
+
+  <!-- Arrow: Prompt → File Predictor -->
+  <line x1="200" y1="240" x2="275" y2="240" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow: File Predictor → Context Ranker -->
+  <line x1="460" y1="240" x2="535" y2="240" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow: Context Ranker → Preloader -->
+  <line x1="720" y1="240" x2="795" y2="240" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow: Preloader → Context Injection -->
+  <line x1="950" y1="240" x2="1015" y2="240" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow: File Predictor → Pattern Learner (downward) -->
+  <line x1="370" y1="280" x2="370" y2="445" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow: Pattern Learner → Context Ranker (upward feedback) -->
+  <path d="M 460,500 L 630,500 L 630,285" stroke="#8b5cf6" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow: Context Injection → Pattern Learner (feedback loop) -->
+  <path d="M 1095,280 L 1095,620 L 460,620 L 460,550" stroke="#8b5cf6" stroke-width="2" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+
+  <!-- Labels for arrows -->
+  <text x="237" y="230" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+    analyze
+  </text>
+  <text x="497" y="230" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+    rank
+  </text>
+  <text x="757" y="230" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+    cache
+  </text>
+  <text x="982" y="230" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+    inject
+  </text>
+
+  <text x="390" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+    predictions
+  </text>
+
+  <text x="680" y="490" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+    learned patterns
+  </text>
+
+  <text x="820" y="610" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">
+    feedback loop
+  </text>
+
+  <!-- Legend -->
+  <g transform="translate(50, 680)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#e5e7eb">
+      Legend:
+    </text>
+    <line x1="80" y1="-5" x2="130" y2="-5" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="140" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#9ca3af">
+      Data Flow
+    </text>
+    <line x1="250" y1="-5" x2="300" y2="-5" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+    <text x="310" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#9ca3af">
+      Feedback Loop
+    </text>
+  </g>
+</svg>

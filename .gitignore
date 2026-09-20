@@ -1,0 +1,8 @@
+node_modules/
+.oracle/
+*.log
+.DS_Store
+.env
+.agent-map/
+__pycache__/
+*.pyc
